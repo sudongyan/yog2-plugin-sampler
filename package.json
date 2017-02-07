@@ -1,0 +1,19 @@
+{
+  "name": "sampler",
+  "version": "1.0.0",
+  "description": "request 取样器，可用于小流量发布，A/B test，请求重定向等等",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://sudongyan@icode.baidu.com:8235/baidu/yuedu/yog2-plugin-sampler"
+  },
+  "keywords": [
+    "yog2",
+    "sampler"
+  ],
+  "author": "sudongyan@baidu.com",
+  "license": "ISC"
+}
