@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @file yog2/plugins/sampler 的配置
  * @author sudongyan<sudongyan@baidu.com>
