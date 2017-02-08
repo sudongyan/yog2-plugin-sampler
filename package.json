@@ -6,10 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "ssh://sudongyan@icode.baidu.com:8235/baidu/yuedu/yog2-plugin-sampler"
-  },
   "keywords": [
     "yog2",
     "sampler"

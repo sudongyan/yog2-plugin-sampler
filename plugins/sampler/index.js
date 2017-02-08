@@ -163,14 +163,15 @@ module.exports.sampler.defaultConf = {
             redirect: {
                 status: 307,
                 url: function (location) {
-                //       host: "yd.baidu.com"
-                //       hostname: "yd.baidu.com"
-                //       href: "https://yd.baidu.com/topic/payhelp"
-                //       origin: "https://yd.baidu.com"
-                //       pathname: "/topic/payhelp"
-                //       port: ""
-                //       protocol: "https:"
-                //       search: ""
+                             // {Object} location propertys:
+                             //       host: "yd.baidu.com"
+                             //       hostname: "yd.baidu.com"
+                             //       href: "https://yd.baidu.com/topic/payhelp?s1=1&s2=2"
+                             //       origin: "https://yd.baidu.com"
+                             //       pathname: "/topic/payhelp"
+                             //       port: ""
+                             //       protocol: "https:"
+                             //       search: "?s1=1&s2=2"
                 }
             },
             flags: []

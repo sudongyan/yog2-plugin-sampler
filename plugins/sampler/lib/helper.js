@@ -25,6 +25,27 @@ function usePercent(percent) {
 }
 
 /**
+ * 获取请求协议名称，上游接入层代理给传了一个header 来标识是https 请求
+ *
+ * @param {Object} req http request
+ * @return {string} 'http' or 'https'
+ */
+function getProtocol(req) {
+    var protocol = 'http';
+
+    if (typeof req.headers !== 'object') {
+        return protocol;
+    }
+
+    if (1 === req.headers['x-ssl-header']) {
+        protocol = 'https';
+    }
+
+    return protocol;
+}
+
+
+/**
  * 构造一个和浏览器中的location相似的对象
  *
  * @param {Object} req http request
@@ -47,7 +68,7 @@ function buildLocation(req) {
         search = '?' + search;
     }
 
-    port = hostname.split(':')[1] || 80;
+    port = hostname.split(':')[1] || '';
 
     var location = {
         host: req.hostname,
@@ -56,31 +77,11 @@ function buildLocation(req) {
         origin: origin,
         pathname: req.path,
         port: port,
-        protocol: req.protocol + ':',
+        protocol: getProtocol(req) + ':',
         search: search
     };
 
     return location;
-}
-
-/**
- * 获取请求协议名称，上游接入层代理给传了一个header 来标识是https 请求
- *
- * @param {Object} req http request
- * @return {string} 'http' or 'https'
- */
-function getProtocol(req) {
-    var protocol = 'http';
-
-    if (typeof req.headers !== 'object') {
-        return protocol;
-    }
-
-    if (1 === req.headers['x-ssl-header']) {
-        protocol = 'https';
-    }
-
-    return protocol;
 }
 
 module.exports.buildLocation = buildLocation;

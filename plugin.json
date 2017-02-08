@@ -1,13 +1,13 @@
 {
   "name": "sampler",
   "version": "1.0.0",
-  "main": "plugins/index.js",
+  "main": "plugins/sampler/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "sudongyan@baidu.com",
   "license": "BSD",
-  "description": "",
+  "description": "http request 过滤抽样和节流工具",
   "dependencies": {
     "debuglog": "^1.0.1"
   }
