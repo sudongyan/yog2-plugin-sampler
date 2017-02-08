@@ -3,7 +3,7 @@
  * @author sudongyan<sudongyan@baidu.com>
  */
 module.exports.sampler = {
-    enabled: false,
+    // enabled: false,
     // featrues:[
     // {
         // desc: 'featrue 的描述，如：https 小流量发布',
