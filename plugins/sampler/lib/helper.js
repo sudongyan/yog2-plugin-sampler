@@ -37,7 +37,7 @@ function getProtocol(req) {
         return protocol;
     }
 
-    if (1 === req.headers['x-ssl-header']) {
+    if (1 == req.headers['x-ssl-header']) {
         protocol = 'https';
     }
 

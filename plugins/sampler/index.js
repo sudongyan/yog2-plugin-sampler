@@ -89,14 +89,19 @@ module.exports.sampler = function (app, conf) {
             }).every(function (item) {
                 var patternVal = pattern[item];
                 var type = Object.prototype.toString.call(patternVal).slice(8, -1);
-
                 var handler = filters[item][type];
-                return (typeof handler === 'function') ? handler(req, patternVal) : false;
+
+                var result = false;
+                if (typeof handler === 'function') {
+                    result  = handler(req, patternVal);
+                }
+                return result;
             });
             debuglog('[featrue %d] ===> this featrue is %s', i, passed ? 'passed' : 'no matched');
 
             // 按百分比处理
             if (passed && usePercent(percent)) {
+                debuglog('[featrue %d] ===> this featrue traffic is %s', i, percent * 100 + '%');
                 // 跳转
                 if (redirect) {
                     if (typeof redirectUrl === 'function') {

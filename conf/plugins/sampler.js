@@ -78,3 +78,27 @@ module.exports.sampler = {
      // }
      // ]
  };
+
+// module.exports.sampler = {
+    // enabled: true,
+    // featrues:[
+    // {
+        // desc: 'wap站点，yd.baidu.com域名的http到https的小流量跳转。sudongyan@baidu.com',
+        // enabled: true,
+        // filter: {
+            // host: 'yd.baidu.com',
+            // protocol: 'http',
+            // cookie: /\;?\s?USESSL=1\;?/g,
+            // ua: /^(?!.*?YUEDU\-NA)/g,
+            // path: /^(?!.*?\.(png|jpg|jpeg|gif|css|js|json|map|svg|ico|swf|flv|apk|woff|eot|ttf|tif|tiff|mp3|ogg|mp4)$)/gi
+        // },
+        // percent: 1,
+        // redirect: {
+            // status: 307,
+            // url: function (location) {
+                // return 'https://' + location.host + location.pathname + location.search
+            // }
+        // }
+    // }
+    // ]
+ // };
