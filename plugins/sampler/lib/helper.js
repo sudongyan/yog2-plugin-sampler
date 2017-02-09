@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @file 抽样器用到的一些辅助处理代码
  * @author sudongyan<sudongyan@baidu.com>
