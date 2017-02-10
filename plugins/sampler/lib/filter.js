@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @file 抽样器请求筛选策略
  * @author sudongyan<sudongyan@baidu.com>
