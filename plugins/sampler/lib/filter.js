@@ -116,12 +116,11 @@ module.exports = {
     protocol: {
         'String': function (req, val) {
             var reqheaders = headers(req);
-            var bfessl = (1 !== reqheaders['x-ssl-header']);
-            if (bfessl) {
-                return true;
+            var protocol = req.protocol;
+            if (1 == reqheaders['x-ssl-header']) {
+                protocol = 'https'
             }
-
-            return req.protocol === val;
+            return protocol === val;
         },
         'RegExp': function (req, val) {
             var reqheaders = headers(req);
