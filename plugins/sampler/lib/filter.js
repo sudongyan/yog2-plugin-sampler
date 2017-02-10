@@ -125,7 +125,7 @@ module.exports = {
         },
         'RegExp': function (req, val) {
             var reqheaders = headers(req);
-            var bfessl = (1 !== reqheaders['x-ssl-header']);
+            var bfessl = (1 != reqheaders['x-ssl-header']);
             var protocol = req.protocol;
             if (bfessl) {
                 protocol = 'https';
@@ -136,7 +136,7 @@ module.exports = {
         },
         'Function': function (req, val) {
             var reqheaders = headers(req);
-            var bfessl = (1 !== reqheaders['x-ssl-header']);
+            var bfessl = (1 != reqheaders['x-ssl-header']);
             var protocol = req.protocol;
             if (bfessl) {
                 protocol = 'https';
