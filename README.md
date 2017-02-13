@@ -72,7 +72,7 @@
 
 - `percent` 字段用于请求量的控制，值在0 ~ 1 之间。如需要50%的请求可以看到某个页面，可以设置为 0.5 。
 
-- `redirect` 字段用于跳转的设置，支持string 和 function, 在使用function里程序会传入一个`location` 对象，可以利用这个location中的属性按需要进行url的构造。`location`对旬的属性同浏览器中的`window.location`。如：我们需要让请求yd.baidu.com/a.html时跳转到yd.baidu.com/b.html, 可以在这里设置`{status: 302, url: 'https://yd.baidu.com/b.html'}`，
+- `redirect` 字段用于跳转的设置，支持string 和 function, 在使用function里程序会传入一个`location` 对象，可以利用这个location中的属性按需要进行url的构造。`location`对象的属性同浏览器中的`window.location`。如：我们需要让请求yd.baidu.com/a.html时跳转到yd.baidu.com/b.html, 可以在这里设置`{status: 302, url: 'https://yd.baidu.com/b.html'}`，
 
 - `flags` 可以是字符串或数组，在设置了`redirect` 后会忽略`flags`的定义。这个设置可以用于A/B test 或其它的需要特定request请求才可以看到的功能或UI元素时使用；如我们设置了一个名为`falgA` 的标签，在模板中可以使用`{%if _featrueFlags.indexOf('flagA') !== -1%}` 来判断是否命中。
 
@@ -80,6 +80,6 @@
 - 指定环境变量`NODE_DEBUG`的`yog/sampler`值，如`"env NODE_DEBUG=yog/dispatcher,yog/loader,yog/plugins,yog/sampler YOG_DEBUG=true node app.js"`， 可以在控制台看到相应的debug信息输出。
 
 ## 注意
-- 在使用跳转时就注意“循环跳转”的问题
+- 在使用跳转时注意“循环跳转”的问题
 - 配置filter 过滤条件时就注意性能开销，由其时使用函数里应该使用没有副作用的操作。
 - 配置filter 时可以调整定义的顺序来获得更好的性能
