@@ -15,7 +15,7 @@
     module.exports.sampler = {
         enabled: false, // type: {bool} 启用或关闭抽样器
         featrues: [
-        {
+                {
                     desc: 'featrue 的描述，如：https 小流量发布',
                     enabled: true, // type: {bool} 启用或关闭这个featrue
                     filter: {
