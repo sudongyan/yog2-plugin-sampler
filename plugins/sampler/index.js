@@ -94,6 +94,7 @@ module.exports.sampler = function (app, conf) {
                 var result = false;
                 if (typeof handler === 'function') {
                     result  = handler(req, patternVal);
+                    debuglog('[featrue %d] ===> filter --> %s: %s result --> %s', i, item, patternVal, result);
                 }
                 return result;
             });
